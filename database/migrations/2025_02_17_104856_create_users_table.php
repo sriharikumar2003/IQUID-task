@@ -12,20 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id(); // Auto-incrementing primary key
-            $table->string('email', 255)->unique(); // Unique email field
+            $table->id(); 
+            $table->string('email', 255)->unique(); 
             $table->string('first_name', 255);
             $table->string('last_name', 255);
-            $table->string('password'); // Hashed password storage
-            $table->timestamps(); // created_at & updated_at
-            $table->engine = 'InnoDB'; // Ensure the table uses InnoDB engine
+            $table->string('password'); 
+            $table->timestamps(); 
+            $table->engine = 'InnoDB';
         });
         
     }
 
-    /**
-     * Reverse the migrations.
-     */
+ 
     public function down(): void
     {
         Schema::dropIfExists('users');

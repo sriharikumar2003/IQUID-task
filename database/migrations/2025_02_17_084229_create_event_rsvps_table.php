@@ -14,8 +14,8 @@ return new class extends Migration
     if (!Schema::hasTable('event_rsvps')) {
         Schema::create('event_rsvps', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users'); // Explicitly reference the 'users' table
-            $table->foreignId('event_id')->constrained('events'); // Explicitly reference the 'events' table
+            $table->foreignId('user_id')->constrained('users'); 
+            $table->foreignId('event_id')->constrained('events'); 
             $table->timestamps();
         });
     }
